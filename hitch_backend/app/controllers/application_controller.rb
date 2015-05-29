@@ -1,12 +1,6 @@
 class ApplicationController < ActionController::API
 	before_action :allow_cross_domain
-	before_action :configure_permitted_parameters, if: :devise_controller?
-
-  protected
-
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :email
-  end
+	
 
 	private
 	 def allow_cross_domain

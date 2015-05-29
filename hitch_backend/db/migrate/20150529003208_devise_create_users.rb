@@ -34,7 +34,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :first_name
       t.string :last_name
       t.datetime :birthdate
-      t.integer :phonenumber
+      t.string :phonenumber
 
 
       t.timestamps null: false
