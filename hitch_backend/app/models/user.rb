@@ -8,7 +8,11 @@ class User < ActiveRecord::Base
 
         has_many :drivers, through: :driver_trips, source: :driver
          ##VVV not sure below
-        has_many :driver_trips, foreign_key: :rider_id, class_name :'TripPassenger'
+        has_many :driver_trips, foreign_key: :driver_id, class_name: 'Trip'
 
-        has_many :passengers, through: :
+        has_many :passengers, through: :passenger_riders
+        has_many :passenger_riders, foreign_key: :passenger_id, class_name: 'Rider'
 end
+
+
+#User.create!({:email => "guy@gmail.com",  :password => "12345678", :password_confirmation => "12345678" })

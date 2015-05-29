@@ -3,9 +3,10 @@ class Trip < ActiveRecord::Base
 	
 
 
-	belongs_to :driver, foreign_key: "driver_id", class_name: "User"
+	belongs_to :driver, foreign_key: 'driver_id', class_name: "User"
 
-	has_many :passengers, through: :riders
+	has_many :passengers, through: :riders, class_name: "User"
+	has_many :riders
 
 
 
