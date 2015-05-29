@@ -13,3 +13,17 @@ class Trip < ActiveRecord::Base
 
 
 end
+
+
+# /users
+
+#/users/id/cars
+
+#/users/id/ratings
+
+#/trips
+
+
+
+#messages???
+
