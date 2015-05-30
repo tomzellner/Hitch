@@ -22,7 +22,16 @@ class User < ActiveRecord::Base
         has_many :rated_ratings, foreign_key: :rater_id, class_name: 'Rating'
 
 
+  after_create :update_access_token!  
 
+  validates :email, presence: true
+
+    private
+
+  def update_access_token!
+    self.access_token = "#{self.id}:#{Devise.friendly_token}"
+    save
+  end
 
 
 

@@ -14,8 +14,6 @@ class UsersController < ApplicationController
 		# else
 			# status 400
 		end
-
-
 	end
 
 	def show
@@ -25,7 +23,6 @@ class UsersController < ApplicationController
 		# else
 		# 	status 400
 		end
-
 	end
 
 
@@ -34,7 +31,8 @@ class UsersController < ApplicationController
 	user = User.find(params[:id])
     if user.update_attributes(user_params)
       render json: { user: user }
-	end
+    end
+  end
 
 	
 
@@ -52,7 +50,7 @@ class UsersController < ApplicationController
 
 	def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :birthdate, :phonenumber, :password, :password_confirmation)
-    end
+  end
 
 
 
